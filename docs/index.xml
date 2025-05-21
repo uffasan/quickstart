@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo up in dis</title>
+    <link>https://uffasan.github.io/quickstart/</link>
+    <description>Recent content on Hugo up in dis</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 21 May 2025 08:30:05 -0400</lastBuildDate>
+    <atom:link href="https://uffasan.github.io/quickstart/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First Post</title>
+      <link>https://uffasan.github.io/quickstart/posts/my-first-post/</link>
+      <pubDate>Wed, 21 May 2025 08:30:05 -0400</pubDate>
+      <guid>https://uffasan.github.io/quickstart/posts/my-first-post/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;This is &lt;strong&gt;bold&lt;/strong&gt; text, and this is &lt;em&gt;emphasized&lt;/em&gt; text. Marvin, what do you make of all this?&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;clownegg.png&#34; alt=&#34;Clown egg&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Visit the &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; website!&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

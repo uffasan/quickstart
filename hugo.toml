@@ -1,0 +1,4 @@
+publishDir = "docs"
+baseURL = 'https://uffasan.github.io/quickstart/'
+title = 'Hugo up in dis'
+theme = 'ananke'

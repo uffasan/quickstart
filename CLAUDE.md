@@ -4,11 +4,23 @@
 Catalog a vinyl record collection from cover photos into a Discogs-ready CSV file.
 
 ## Photo Batches
-Photos will arrive in two named batches. Track which batch each record came from in the `Condition` column:
-- **Batch: cleaned** — records that are already cleaned and in sleeves
-- **Batch: needs cleaning** — records that still need to be cleaned and sleeved
+Photos live in two folders. Track which folder each record came from in the `condition` column:
+- **`clean/`** — records already cleaned and in sleeves
+- **`dirty/`** — records that still need to be cleaned and sleeved
 
-The user will tell you which batch they're submitting when they hand over photos.
+After cataloging a batch, move the processed photos to the matching archive folder (`archive/clean/` or `archive/dirty/`) so the source folders stay clear for new records.
+
+## Folder Structure
+```
+~/records/
+  CLAUDE.md
+  catalog.csv
+  clean/          ← drop cleaned/sleeved cover photos here
+  dirty/          ← drop photos of records needing cleaning here
+  archive/
+    clean/        ← processed clean photos moved here
+    dirty/        ← processed dirty photos moved here
+```
 
 ## Output File
 Write results to `catalog.csv` in the project folder, appending each batch. Never overwrite previous entries.
@@ -23,7 +35,7 @@ Columns:
 | `catalog_number` | Label catalog number if visible on cover, else blank |
 | `country` | Country of pressing if determinable, else blank |
 | `discogs_release_id` | Discogs release ID if confidently matched, else blank |
-| `condition` | "cleaned" or "needs cleaning" based on batch |
+| `condition` | "clean" or "dirty" based on source folder |
 | `flag` | See Flagging section below |
 | `flag_notes` | What specific info to look up on the physical record |
 
@@ -51,6 +63,6 @@ Leave `flag` blank and `flag_notes` blank when the match is confident.
 - Flagged records will be resolved by the user with the physical record in hand
 
 ## Session Kickoff
-When the user says something like "catalog the photos in the covers folder", find all image files in the `covers/` subfolder (or whatever folder they specify), process them in order, and append results to `catalog.csv`.
+When the user says something like "catalog the new records", process all image files in `clean/` and `dirty/`. After successfully appending each photo's record to `catalog.csv`, move that photo to the corresponding `archive/clean/` or `archive/dirty/` folder.
 
-Ask the user which batch (cleaned or needs cleaning) before processing if they haven't said.
+If both folders are empty, let the user know there's nothing to process.
